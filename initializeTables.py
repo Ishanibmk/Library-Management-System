@@ -3,7 +3,7 @@ import pymysql
 
 hostname = 'localhost'
 username = 'root'
-password = 'root'
+password = '1234'
 database = 'library'
 
 myConnection = pymysql.connect( host=hostname, user=username, passwd=password, db=database)
@@ -21,9 +21,9 @@ books = pd.read_csv('books.csv')
 borrowers = pd.read_csv('borrowers.csv')
 
 def insertIntoBook(conn, data, key):
-	isbn10 = data.get_value(key,'ISBN10')
-	title = data.get_value(key,'Title')
-	authors = str(data.get_value(key,'Author')).split(',')
+	isbn10 = data._get_value(key,'ISBN10')
+	title = data._get_value(key,'Title')
+	authors = str(data._get_value(key,'Author')).split(',')
 	availabitity = 1
 	cur = conn.cursor()
 	query = 'INSERT INTO Book VALUES("'+ str(isbn10) +'","'+ str(title) +'","'+ str(availabitity) +'");'
@@ -38,10 +38,10 @@ def insertIntoBook(conn, data, key):
 		cur.execute(query2)
 
 def insertIntoBorrower(conn, data, key):
-	ssn = str(data.get_value(key,'id'))
-	bname = str(data.get_value(key,'first_name')) +" "+ str(data.get_value(key,'last_name'))
-	address = str(data.get_value(key,'address')) +","+ str(data.get_value(key,'city')) +","+ str(data.get_value(key,'state'))
-	phone = str(data.get_value(key,'phone'))
+	ssn = str(data._get_value(key,'id'))
+	bname = str(data._get_value(key,'first_name')) +" "+ str(data._get_value(key,'last_name'))
+	address = str(data._get_value(key,'address')) +","+ str(data._get_value(key,'city')) +","+ str(data._get_value(key,'state'))
+	phone = str(data._get_value(key,'phone'))
 
 	query = 'INSERT INTO Borrower(Ssn,Bname,Address,Phone) VALUES("'+ ssn +'","'+ bname +'","'+ address +'","'+ phone +'");'
 	cur.execute(query)
