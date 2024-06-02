@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <style media="screen">
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5; /* Set background color */
+      color: #333; /* Set default text color */
+    }
+
+    .jumbotron {
+      background-color: #ffffff; /* Set jumbotron background color */
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add shadow effect */
+      padding: 30px;
+    }
+
+    .jumbotron h1 {
+      text-align: center;
+      font-size: 36px;
+      color: #16a085; /* Change header text color */
+    }
+
+    .lead {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #555; /* Change lead text color */
+    }
+
+    .options {
+      margin-top: 30px;
+    }
+
+    .btn-dashboard {
+      background-color: #16a085; /* Adjusted button background color */
+      border-color: #16a085;
+      font-size: 20px;
+      padding: 12px 30px;
+      border-radius: 10px;
+      color: #fff; /* Text color */
+      text-decoration: none;
+      display: inline-block;
+      transition: background-color 0.3s ease; /* Smooth transition on hover */
+    }
+
+    .btn-dashboard:hover {
+      background-color: #138d75; /* Darker shade of green on hover */
+      border-color: #138d75;
+    }
+
+    .alert-success {
+      background-color: #28a745; /* Change alert success background color */
+      color: #fff; /* Change alert success text color */
+      text-align: center;
+      padding: 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  {% include "library/navbarstudent.html" %}
+  <br>
+  <br>
+  <div class="container">
+    <div class="jumbotron">
+      <h1 class="display-4">Hello {{ user.first_name }}!</h1>
+      <p class="lead">Welcome to the Online Library! As a student, you can see how many books you have taken from the library along with fines and more.</p>
+      <hr class="my-4">
+      <div class="options">
+        <a href="viewissuedbookbystudent" class="btn btn-dashboard btn-lg active" role="button" aria-pressed="true"><i class="fa fa-book"></i> View Issued Books</a>
+      </div>
+    </div>
+  </div>
+  {% include "library/footer.html" %}
+</body>
+</html>

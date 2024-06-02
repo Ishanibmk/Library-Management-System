@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <style media="screen">
+    .jumbotron {
+      margin-top: 0px;
+      margin-bottom: 0px;
+      background-color: #f8f9fa; /* Set background color */
+      padding: 20px; /* Add padding for better spacing */
+      border-radius: 10px; /* Add border radius for rounded corners */
+    }
+    .jumbotron h1 {
+      text-align: center;
+    }
+    .options {
+      text-align: center;
+    }
+    .btn-dashboard {
+      width: 200px;
+      height: 150px;
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 1.5;
+      border-radius: 10px;
+      margin: 20px;
+      padding-top: 20px;
+      color: white;
+      text-decoration: none;
+      display: inline-block;
+      transition: transform 0.3s ease-in-out;
+    }
+    .btn-dashboard:hover {
+      transform: scale(1.05);
+    }
+    .btn-dashboard i {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+    .btn-add-book {
+      background-color: #007bff; /* Blue color */
+    }
+    .btn-view-book {
+      background-color: #28a745; /* Green color */
+    }
+    .btn-issue-book {
+      background-color: #dc3545; /* Red color */
+    }
+    .btn-view-issued-book {
+      background-color: #ffc107; /* Yellow color */
+    }
+    .btn-view-student {
+      background-color: #17a2b8; /* Cyan color */
+    }
+  </style>
+</head>
+<body>
+  {% include "library/navbaradmin.html" %}
+  <br>
+  <br>
+  <center><h3 style="margin-bottom: 0px;" class='alert alert-success'>Welcome to Online library !</h3></center>
+  <div class="jumbotron" style="margin-bottom: 0px;">
+    <h1 class="display-4">Hello {{user.first_name}}!</h1>
+    <p class="lead">As you are Admin, you can add a book to the library, view available books, issue books to students, view issued books, and manage students.</p>
+    <hr class="my-4">
+    <p>Options Available For You</p>
+    <div class="options">
+      <a href="addbook" class="btn btn-dashboard btn-add-book"><i class="fa fa-plus-circle"></i><br>Add Book</a>
+      <a href="viewbook" class="btn btn-dashboard btn-view-book"><i class="fa fa-eye"></i><br>View Books</a>
+      <a href="issuebook" class="btn btn-dashboard btn-issue-book"><i class="fa fa-book"></i><br>Issue Book</a>
+      <a href="viewissuedbook" class="btn btn-dashboard btn-view-issued-book"><i class="fa fa-bookmark"></i><br>View Issued Books</a>
+      <a href="viewstudent" class="btn btn-dashboard btn-view-student"><i class="fa fa-users"></i><br>View Students</a>
+    </div>
+  </div>
+  {% include "library/footer.html" %}
+</body>
+</html>

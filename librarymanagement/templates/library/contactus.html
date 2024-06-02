@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>Library Management System || Contact Us</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .jumbotron {
+            margin: 2rem auto;
+            padding: 2rem 1rem;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            color: #333;
+            width: 80%;
+        }
+        .jumbotron h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #343a40;
+        }
+        .jumbotron p.lead {
+            font-size: 1.25rem;
+            color: #6c757d;
+        }
+        .jumbotron hr {
+            border-top: 1px solid #dee2e6;
+        }
+        .btn-primary {
+            background-color: #ff6f61;
+            border-color: #ff6f61;
+        }
+        .btn-primary:hover {
+            background-color: #e65c54;
+            border-color: #e65c54;
+        }
+        .alert-success {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background-color: #28a745;
+            border-color: #28a745;
+        }
+        .form-group {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+{% include "library/navbar.html" %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col text-center">
+            <div class="alert alert-success">Contact Us!</div>
+        </div>
+    </div>
+    <div class="jumbotron">
+        <h1 class="display-4">Get in Touch!</h1>
+        <p class="lead">Feel free to contact us with any questions or feedback. We are here to help!</p>
+        <hr class="my-4">
+        <p>Send us a message and we'll get back to you as soon as possible.</p>
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="/" role="button">HOME</a>
+        </p>
+        <!-- Review Form -->
+        <form action="/submit_review/" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="review">Leave a Review:</label>
+                <textarea class="form-control" id="review" name="review" rows="4" placeholder="Enter your review here"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit Review</button>
+        </form>
+    </div>
+</div>
+{% include "library/footer.html" %}
+</body>
+</html>
