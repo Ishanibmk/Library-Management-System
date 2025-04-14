@@ -3,7 +3,6 @@
 ---
 ## screenshots
 ### Homepage
-![homepage snap](https://github.com/sumitkumar1503/librarymanagement/blob/master/static/screenshots/homepage.png?raw=true)
 ### Admin Dashboard
 ![dashboard snap](https://github.com/sumitkumar1503/librarymanagement/blob/master/static/screenshots/adminhomepage.png?raw=true)
 ### Available Book
